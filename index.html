@@ -39,43 +39,231 @@
             </div>
         </div>
     </section>
-
- 
-
-    <script>
-        // Gestion du menu mobile
-        const menuIcon = document.querySelector('.icons');
-        const navLinks = document.querySelector('.nav-links');
-        const menuIconElement = document.getElementById('menu-icon');
-
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+<!--section a propos-->
+    <section class="business-section">
+        <div class="container">
+            <div class="image-container">
+                <div class="business-image">
+                    <img src="/img/personnes-travaillant-dans-une-agence-de-marketing.jpg" alt="">
+                </div>
+            </div>
             
-            // Changement d'icône
-            if (navLinks.classList.contains('active')) {
-                menuIconElement.classList.replace('bx-menu', 'bx-x');
-            } else {
-                menuIconElement.classList.replace('bx-x', 'bx-menu');
-            }
-        });
+            <div class="content">
+                <h2 class="title">
+                    Meilleure Société de Conseil<br>
+                    Pour Votre Entreprise
+                </h2>
+                
+                <p class="description">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro architecto nam est enim qui ipsam dicta corporis eum neque, suscipit provident, officia totam error. Ratione quae ad voluptate possimus nobis?
+                </p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">76+</div>
+                        <div class="stat-label">Sed do eiusmod tempor</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">Sed do eiusmod tempor</div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="cta-button">
+                    Prendre Rendez-vous
+                </a>
+            </div>
+        </div>
+    </section>
+<!--section services-->
+    <section class="services-section">
+        <div class="services-container">
+            <h2 class="services-title">Nos Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lorem ipsum</h3>
+                    <p class="service-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
 
-        // Fermer le menu en cliquant sur un lien
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuIconElement.classList.replace('bx-x', 'bx-menu');
-            });
-        });
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lorem ipsum</h3>
+                    <p class="service-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
 
-        // Changement de style de la navbar au scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lorem ipsum</h3>
+                    <p class="service-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM10 5.47l4 1.4v11.66l-4-1.4V5.47z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lorem ipsum</h3>
+                    <p class="service-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h3>Lorem ipsum dolor sit </h3>
+                <h2 class="contact-title">
+                    consectetur adipiscing. <br>
+                    Sed ?
+                </h2>
+            </div>
+
+            <div class="contact-form">
+                <input type="text" class="form-input" placeholder="Lorem ipsum">
+                <input type="tel" class="form-input" placeholder="+225 XXXXXXXXX">
+                <button class="form-button">Envoyer</button>
+            </div>
+        </div>
+    </section>
+<!--section why-->
+    <section class="why-choose-section">
+        <div class="why-choose-container">
+            <p class="section-subtitle">Some Reasons</p>
+            <h2 class="section-title">Why Choose Us</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <h3 class="feature-title">High Quality Hardware</h3>
+                    <p class="feature-description">
+                        We use top-notch hardware to develop the most efficient apps for our customers.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <h3 class="feature-title">Dedicated 24/7 Support</h3>
+                    <p class="feature-description">
+                        You can rely on our 24/7 tech support that will gladly solve any app issue you may have.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <h3 class="feature-title">30-Day Money-back Guarantee</h3>
+                    <p class="feature-description">
+                        If you are not satisfied with our apps, we will return your money in the first 30 days.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-number">04</div>
+                    <h3 class="feature-title">Agile and Fast Working Style</h3>
+                    <p class="feature-description">
+                        This type of approach to our work helps our specialists to quickly develop better apps.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-number">05</div>
+                    <h3 class="feature-title">Some Apps are Free</h3>
+                    <p class="feature-description">
+                        We also develop free apps that can be downloaded online without any payments.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-number">06</div>
+                    <h3 class="feature-title">High Level of Usability</h3>
+                    <p class="feature-description">
+                        All our products have high usability allowing users to easily operate our apps.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer>
+        <div class="footer-container">
+          <div class="footer-col">
+            <h4>Kham-Consulting</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis mollitia unde itaque voluptatibus.</p>
+            <div class="social-links">
+              <a href="#"><i class='bx bxl-facebook'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-linkedin'></i></a>
+              <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#how">Comment ça marche</a></li>
+              <li><a href="#case-studies">Études de cas</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Conseil juridique</a></li>
+              <li><a href="#">Gestion administrative</a></li>
+              <li><a href="#">Accompagnement stratégique</a></li>
+              <li><a href="#">Formation professionnelle</a></li>
+              <li><a href="#">Audit organisationnel</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact">
+              <p><i class='bx bx-map'></i> 123 Avenue des Entreprises, 75000 Paris</p>
+              <p><i class='bx bx-phone'></i> +33 1 23 45 67 89</p>
+              <p><i class='bx bx-envelope'></i> contact@kham-consulting.fr</p>
+              <p><i class='bx bx-time'></i> Lun-Ven: 9h-18h</p>
+            </div>
+          </div>
+          
+         
+        
+        <div class="footer-bottom">
+          <p>&copy; 2023 Kham-Consulting. Tous droits réservés.</p>
+        </div>
+      </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
