@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kham-Consulting - Acceuil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Kham-Consulting</div>
+
+        <label for="menu-toggle" class="icons">
+            <i class='bxr bx-menu' id="menu-icon"></i> 
+        </label>
+        <nav>
+            <ul class="nav-links">
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#how">Comment ça marche</a></li>
+              <li><a href="#case-studies">Études de cas</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-nav">Contact</a>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Votre partenaire expert<br>en solutions administratives et juridiques</h1>
+            <p>
+                Des solutions stratégiques et un accompagnement expert pour sécuriser et développer 
+                votre entreprise avec sérénité.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+                <a href="#services" class="btn-secondary">Découvrir nos services</a>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <script>
+        // Gestion du menu mobile
+        const menuIcon = document.querySelector('.icons');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIconElement = document.getElementById('menu-icon');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Changement d'icône
+            if (navLinks.classList.contains('active')) {
+                menuIconElement.classList.replace('bx-menu', 'bx-x');
+            } else {
+                menuIconElement.classList.replace('bx-x', 'bx-menu');
+            }
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIconElement.classList.replace('bx-x', 'bx-menu');
+            });
+        });
+
+        // Changement de style de la navbar au scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
