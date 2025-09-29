@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous | Entreprise de Consulting</title>
+    <style>
+        :root {
+            --primary: #5c6cff;
+            --secondary: #7d5cff;
+            --light: #dddddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  top: 15px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #5c6cff;
+}
+
+.btn-nav {
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  background-color: #6d28d9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+  background: white;
+  color: #6d28d9;
+}
+
+/* Toggle bar */
+.icons {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+        .contacter-nous {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contacter-nous h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .contacter-nous p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .info-item i {
+            background-color: var(--light);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(92, 108, 255, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(92, 108, 255, 0.3);
+        }
+        
+        .form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .footer {
+  background-color: #6d28d9;
+  color: #dddddd;
+  padding: 3rem 1rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #7d5cff;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #dddddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #7d5cff;
+  transform: translateX(5px);
+}
+
+.footer-contact p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: #7d5cff;
+  min-width: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #7d5cff;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+  
+  .footer-section h3::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .footer-contact p {
+      justify-content: center;
+  }
+}
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: #faf6f6;">Kham-Consulting</a></div>
+
+        <label for="menu-toggle" class="icons">
+            <i class='bxr bx-menu' id="menu-icon"></i> 
+        </label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Acceuil</a></li>  
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#how">Comment ça marche</a></li>
+              <li><a href="#case-studies">Études de cas</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-nav">Contact</a>
+    </header>
+    <br><br><br><br>
+    <div class="container">
+        <div class="contacter-nous">
+            <h1>Contactez-nous</h1>
+            <p>Notre équipe de consultants est à votre disposition pour répondre à toutes vos questions</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Nos coordonnées</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fuga accusa</p>
+                
+                <div class="info-item">
+                    <i>📍</i>
+                    <div>
+                        <h3>Adresse</h3>
+                        <p>Lorem ipsum dolor sit<br>Lorem ipsum</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i>📞</i>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+225 XXXXXXXXX</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i>✉️</i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>contact@consulting-entreprise.comr</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i>🕒</i>
+                    <div>
+                        <h3>Horaires d'ouverture</h3>
+                        <p>Lundi - Vendredi: 9h00 - 18h00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Envoyez-nous un message</h2>
+                <div id="form-message" class="form-message"></div>
+                
+                <form id="contact-form" action="index.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse email *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Entreprise</label>
+                        <input type="text" id="company" name="company" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Sujet *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up"
+    data-aos-duration="3000">
+    <footer class="footer">
+       <div class="footer-container">
+           <div class="footer-section">
+               <h3>Navigation</h3>
+               <ul class="footer-links">
+                   <li><a href="#about">À propos</a></li>
+                   <li><a href="#services">Services</a></li>
+                   <li><a href="#how">Comment ça marche</a></li>
+                   <li><a href="#case-studies">Études de cas</a></li>
+                   <li><a href="contact.html" class="btn-nav">Contact</a></li>
+               </ul>
+           </div>
+           
+           <div class="footer-section">
+               <h3>Nos Services</h3>
+               <ul class="footer-links">
+                   <li><a href="#">Lorem ipsum</a></li>
+                   <li><a href="#">Lorem ipsum</a></li>
+                   <li><a href="#">Lorem ipsum</a></li>
+                   <li><a href="#">Lorem ipsum</a></li>
+                   <li><a href="#">Lorem ipsum</a></li>
+               </ul>
+           </div>
+           
+           <div class="footer-section">
+               <h3>Contact</h3>
+               <div class="footer-contact">
+                   <p>
+                       <i>📍</i> Lorem ipsum dolor sit amet
+                   </p>
+                   <p>
+                       <i>📞</i> +225 XXXXXXXXX
+                   </p>
+                   <p>
+                       <i>✉️</i> contact@consulting-juridique.com
+                   </p>
+               </div>
+               
+               <div class="footer-social">
+                   <a href="#" class="social-icon">f</a>
+                   <a href="#" class="social-icon">in</a>
+                   <a href="#" class="social-icon">t</a>
+               </div>
+           </div>
+       </div>
+       
+       <div class="footer-bottom">
+           <p>&copy; 2023 Consulting Juridique. Tous droits réservés. | <a href="#" style="color: #dddddd;">Mentions légales</a> | <a href="#" style="color: #dddddd;">Politique de confidentialité</a></p>
+       </div>
+   </footer>
+</div>
+
+
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('form-message');
+            
+            // Afficher un message de chargement
+            messageDiv.textContent = 'Envoi en cours...';
+            messageDiv.className = 'form-message';
+            messageDiv.style.display = 'block';
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.textContent = data.message;
+                    messageDiv.className = 'form-message success';
+                    form.reset();
+                } else {
+                    messageDiv.textContent = data.message;
+                    messageDiv.className = 'form-message error';
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+                messageDiv.className = 'form-message error';
+                console.error('Erreur:', error);
+            });
+        });
+    </script>
+</body>
+</html>
