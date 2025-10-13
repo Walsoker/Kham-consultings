@@ -1,6 +1,6 @@
 <?php
 // Configuration
-$to_email = "votre-email@entreprise.com"; // Remplacez par votre adresse email
+$to_email = "contact@khamconsulting.africa"; // Remplacez par votre adresse email
 $subject_prefix = "Nouveau message de contact - ";
 
 // Vérification que le formulaire a été soumis
